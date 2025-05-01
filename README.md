@@ -2,8 +2,6 @@
 
 UnitDesk is a modular, customizable desktop widget framework for Windows that provides real-time system monitoring. It uses Windows Presentation Foundation (WPF) to create lightweight, transparent widgets that sit directly on your desktop.
 
-![hippo](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXJnbmRwNHh5dmtiemd2amtrZG1jN295bzRiZjltbG9hdGVneHU4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bIt5sBF9V46rmwaOKW/giphy.gif)
-
 ## Features
 
 - **Multiple Widget Types**:
@@ -38,6 +36,11 @@ UnitDesk is a modular, customizable desktop widget framework for Windows that pr
   - RAM usage monitoring
   - GPU load and memory usage for NVIDIA and AMD cards
   - Disk space monitoring for all drives
+
+<p align="center">
+  <img style="height:860px" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXJnbmRwNHh5dmtiemd2amtrZG1jN295bzRiZjltbG9hdGVneHU4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bIt5sBF9V46rmwaOKW/giphy.gif">
+</p>
+
 
 ## Technology Stack
 

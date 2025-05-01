@@ -1,0 +1,35 @@
+<local:BaseWidget x:Class="UnitDesk.Widgets.SystemInfoWidget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:UnitDesk.Widgets"
+        Title="System Info Widget" Height="150" Width="300" 
+        Background="#33000000" WindowStyle="None" AllowsTransparency="True">
+    <Border CornerRadius="10" BorderBrush="#22FFFFFF" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Border Background="#44000000" CornerRadius="10,10,0,0">
+                <Grid>
+                    <TextBlock x:Name="TitleText" Text="System Information" Foreground="White" 
+                               Margin="10,5" FontWeight="Bold" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="⟲" Width="20" Height="20" Margin="0,0,5,0" Padding="0"
+                                Click="ResetButton_Click" ToolTip="Reset Position"/>
+                        <Button Content="✕" Width="20" Height="20" Margin="0,0,5,0" Padding="0"
+                                Click="CloseButton_Click" ToolTip="Close Widget"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <StackPanel Grid.Row="1" Margin="10">
+                <TextBlock x:Name="SystemInfoText" Text="CPU: 0%  |  RAM: 0%" 
+                           Foreground="White" Margin="0,5"/>
+                <TextBlock x:Name="GpuInfoText" Text="GPU information will appear here" 
+                           Foreground="White" Margin="0,5" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</local:BaseWidget>

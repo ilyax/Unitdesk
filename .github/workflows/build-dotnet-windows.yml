@@ -1,0 +1,44 @@
+name: Build and Create Windows Setup
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish (self-contained)
+        run: dotnet publish -c Release -r win-x64 --self-contained true -o publish
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnitDesk-Setup
+          path: publish/
+
+      - name: Install Inno Setup
+        run: choco install innosetup
+
+      - name: Build installer
+        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss'
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnitDeskSetup-Installer
+          path: UnitDeskSetup.exe

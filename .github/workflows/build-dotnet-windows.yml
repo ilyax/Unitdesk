@@ -41,5 +41,25 @@ jobs:
       - name: Upload installer
         uses: actions/upload-artifact@v4
         with:
-          name: UnitDeskSetup-Installer
+          name: UnitDesk-Installer
           path: UnitDeskSetup.exe
+
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: UnitDesk v${{ github.run_number }}
+          body: |
+            Automated release for UnitDesk build ${{ github.run_number }}.
+            - This release includes the latest Windows installer (UnitDeskSetup.exe).
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload installer to Release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: UnitDeskSetup.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

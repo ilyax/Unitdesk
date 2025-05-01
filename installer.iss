@@ -1,9 +1,10 @@
-﻿[Setup]
+[Setup]
 AppName=UnitDesk
 AppVersion=1.0.0
 DefaultDirName={pf}\UnitDesk
 DefaultGroupName=UnitDesk
 OutputBaseFilename=UnitDeskSetup
+OutputDir=.
 Compression=lzma
 SolidCompression=yes
 

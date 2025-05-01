@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: UnitDesk-Installer
-          path: Output/UnitDeskSetup.exe
+          path: UnitDeskSetup.exe
 
       - name: Create Release Tag
         if: github.ref == 'refs/heads/main'
@@ -69,6 +69,6 @@ jobs:
           body: |
             Automated release for UnitDesk build ${{ github.run_id }}.
             - This release includes the latest Windows installer (UnitDeskSetup.exe).
-          files: Output/UnitDeskSetup.exe
+          files: UnitDeskSetup.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

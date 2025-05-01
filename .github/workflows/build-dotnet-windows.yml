@@ -34,7 +34,7 @@ jobs:
       - name: Install Inno Setup
         run: choco install innosetup
 
-      name: Build installer
+      - name: Build installer
         run: |
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
 
